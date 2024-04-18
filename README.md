@@ -2,7 +2,11 @@
 
 ## Introduction
 
-**Dynamic Agent Swarms** **D.A.S** revolutionize the concept of labor allocation and task execution by leveraging microservice architectures to deploy labor as an on-demand service. This repository introduces the foundational technology behind Dynamic Agent Swarms, exemplified by **Argus AI**, an early alpha project tailored for the financial industry.
+**Dynamic Agent Swarms (DAS)** revolutionize the concept of labor allocation and task execution by leveraging microservice architectures to deploy labor as an on-demand service. This repository introduces the foundational technology behind Dynamic Agent Swarms, exemplified by **Argus AI**, an early alpha project tailored for the financial industry.
+
+## About Brash Labs
+
+Brash Labs is at the forefront of technology innovation, specializing in advanced data analytics, artificial intelligence, and machine learning. We craft dynamic solutions that significantly enhance efficiency and decision-making across various sectors, including automotive, insurance, and fintech, enabling businesses to adapt and thrive in an ever-evolving digital landscape.
 
 ## About Dynamic Agent Swarms
 
@@ -45,7 +49,6 @@ Dynamic Agent Swarms can quickly scale up or down, deploying agents as needed to
 
 The system is designed to handle varying loads and can adapt to different operational scales and task complexities. This adaptability makes it ideal for a wide range of industries, each benefiting from the specialized capabilities of tailored agent swarms.
 
-
 ## Argus AI: An Early Alpha Example
 
 ### Project Overview
@@ -76,6 +79,18 @@ The architecture of Dynamic Agent Swarms involves multiple layers:
 ### Data Schemas
 
 Data schemas are designed to be flexible to accommodate the needs of various agents. Each agent can define its own schema based on the tasks it needs to perform.
+
+### Generic Functions
+
+- **Task Allocation**: Assigns tasks to agents based on their specialization and current load.
+- **Agent Management**: Oversees the lifecycle of each agent from creation to retirement.
+- **Feedback Loops**: Integrates performance feedback into the system for continuous improvement.
+
+## Contact Us
+
+To learn more about how Dynamic Agent Swarms can transform your business operations, or to schedule a demo, please contact us:
+
+Email: AlfredoAyala@brashla.com
 
 ### Generic Functions
 
