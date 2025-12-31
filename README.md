@@ -1,7 +1,3 @@
-Below is a tightened, executive-grade rewrite that preserves your technical intent while improving structure, clarity, and positioning. The language is aligned to a consulting / platform-architecture tone and avoids marketing excess while remaining directional.
-
----
-
 # Brash Labs Presents
 
 ## Dynamic Agent Swarms (DAS): Labor as a Microservice
