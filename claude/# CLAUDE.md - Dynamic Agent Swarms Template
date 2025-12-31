@@ -1,0 +1,324 @@
+# CLAUDE.md - Dynamic Agent Swarms Template
+
+**Version:** 2.0 | **Based on:** Brash Labs DAS Framework
+
+---
+
+## 1. Core Concept: Labor as a Microservice
+
+```
+TRADITIONAL: Human → Task → Result (sequential, blocking)
+DAS MODEL:   Coordinator → Agent Swarm → Parallel Results → Synthesis
+```
+
+### Architecture Layers
+
+| DAS Layer | Claude Code Mapping | Purpose |
+|-----------|---------------------|---------|
+| **Control Layer** | Coordinator (Opus) | Orchestrates deployment |
+| **Service Layer** | Managers (Sonnet) | Execute task categories |
+| **Worker Layer** | Workers (Haiku) | Atomic task execution |
+| **Data Layer** | Files, Context | Persistent storage |
+
+---
+
+## 2. Agent Hierarchy (Token-Optimized)
+
+```
+User Request
+     │
+Coordinator (Opus) ─────── 2K token budget
+     │
+     ├── Director (Opus) ──────── 1K token reports
+     │         │
+     │         ├── Manager 1 (Sonnet) ─── 500 tok
+     │         │       ├── Worker (Haiku) ─ 200 tok
+     │         │       ├── Worker (Haiku) ─ 200 tok
+     │         │       └── Worker (Haiku) ─ 200 tok
+     │         │
+     │         ├── Manager 2 (Sonnet) ─── 500 tok
+     │         └── Manager 3 (Sonnet) ─── 500 tok
+     │
+     └── Feedback Loop ──────────── Recursive learning
+```
+
+### Model Selection
+
+| Complexity | Model | Token Limit | Use Case |
+|------------|-------|-------------|----------|
+| Atomic | Haiku | 200 tok | Single file, simple |
+| Standard | Sonnet | 500 tok | Multi-file, integration |
+| Complex | Opus | 1K tok | Architecture, synthesis |
+
+---
+
+## 3. Industry Deployments
+
+### 3.1 Software Development
+
+```
+Specialized Agents:
+├── Architect ─── System design, component breakdown
+├── Implementer ─── Code writing, following patterns
+├── Reviewer ─── Code quality, best practices
+├── Tester ─── Unit, integration, E2E tests
+└── Documentor ─── API docs, README, comments
+```
+
+### 3.2 Research & Analysis
+
+```
+Specialized Agents:
+├── Researcher ─── Information gathering, sources
+├── Analyst ─── Data processing, insights
+├── Summarizer ─── Condensing findings
+├── Validator ─── Fact checking, verification
+└── Reporter ─── Final synthesis, recommendations
+```
+
+### 3.3 Content Creation
+
+```
+Specialized Agents:
+├── Planner ─── Outline, structure
+├── Writer ─── Content generation
+├── Editor ─── Grammar, style, clarity
+├── Formatter ─── Layout, presentation
+└── Reviewer ─── Final quality check
+```
+
+---
+
+## 4. Example: Building a Calendar App
+
+### 4.1 Deploy Swarm
+
+```
+"Deploy DAS swarm for Calendar App:
+- 1 Opus Director (architecture)
+- 3 Sonnet Managers (backend, frontend, tests)
+- 9 Haiku Workers (3 per manager)
+Token limits: Workers 200, Managers 500, Director 1K"
+```
+
+### 4.2 Manager Breakdown
+
+**Backend Manager Tasks:**
+```
+| Task | Worker | Output |
+|------|--------|--------|
+| Database schema | Haiku-1 | calendar.sql |
+| API endpoints | Haiku-2 | routes.ts |
+| Event CRUD | Haiku-3 | events.ts |
+```
+
+**Frontend Manager Tasks:**
+```
+| Task | Worker | Output |
+|------|--------|--------|
+| Calendar grid | Haiku-1 | CalendarGrid.tsx |
+| Event modal | Haiku-2 | EventModal.tsx |
+| Day view | Haiku-3 | DayView.tsx |
+```
+
+**Test Manager Tasks:**
+```
+| Task | Worker | Output |
+|------|--------|--------|
+| Unit tests | Haiku-1 | events.test.ts |
+| Integration | Haiku-2 | api.test.ts |
+| E2E | Haiku-3 | calendar.spec.ts |
+```
+
+### 4.3 Worker Report Format (200 tok max)
+
+```markdown
+## Worker Report: CalendarGrid
+**Status:** COMPLETE
+| File | Changes | Lines |
+|------|---------|-------|
+| CalendarGrid.tsx | Created | 145 |
+**Handoff:** Ready for EventModal integration
+```
+
+### 4.4 Manager Synthesis (500 tok max)
+
+```markdown
+## Manager Report: Frontend
+**Status:** 3/3 Complete
+| Task | File | Status |
+|------|------|--------|
+| Calendar grid | CalendarGrid.tsx | DONE |
+| Event modal | EventModal.tsx | DONE |
+| Day view | DayView.tsx | DONE |
+**Blockers:** None
+**Next:** Wire to backend API
+```
+
+---
+
+## 5. Example: Research Task
+
+### 5.1 Deploy Research Swarm
+
+```
+"Deploy DAS research swarm for 'Best practices for API design':
+- 1 Opus Director (synthesis)
+- 2 Sonnet Managers (sources, analysis)
+- 6 Haiku Workers
+Token limits enforced"
+```
+
+### 5.2 Sources Manager
+
+```
+| Worker | Source Type | Output |
+|--------|-------------|--------|
+| Haiku-1 | Official docs | REST standards |
+| Haiku-2 | Industry blogs | Best practices |
+| Haiku-3 | GitHub examples | Code patterns |
+```
+
+### 5.3 Analysis Manager
+
+```
+| Worker | Analysis Type | Output |
+|--------|---------------|--------|
+| Haiku-1 | Compare patterns | comparison.md |
+| Haiku-2 | Pros/cons | tradeoffs.md |
+| Haiku-3 | Recommendations | suggestions.md |
+```
+
+---
+
+## 6. Quick Start Commands
+
+### Initialize Session
+```
+"Read CLAUDE.md. Check existing todos. Report agent capacity."
+```
+
+### Deploy Feature Swarm
+```
+"Deploy DAS swarm for [FEATURE]:
+- 1 Opus Director
+- 3 Sonnet Managers
+- 9 Haiku Workers
+Token limits: Workers 200, Managers 500, Director 1K
+Report format: Tables only."
+```
+
+### Scale Up
+```
+"Scale swarm:
+- Add 2 Managers for [DOMAIN]
+- 6 additional Workers
+Maintain token limits."
+```
+
+### Audit/Review
+```
+"Deploy review tribunal:
+- Code Quality Auditor (Sonnet)
+- Security Reviewer (Sonnet)
+- Performance Analyst (Sonnet)
+Each reports 500 tok. Director synthesizes 1K."
+```
+
+---
+
+## 7. Anti-Patterns (Avoid)
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Monolithic prompts | Context overflow | Break into agent tasks |
+| Full output reads | Token waste | Summarize in 200 tok |
+| Sequential agents | Slow execution | Parallel where possible |
+| No token limits | Runaway context | Always specify limits |
+| Missing handoffs | Lost work | Explicit next-action |
+| Vague instructions | Poor results | Specific file paths |
+
+---
+
+## 8. Report Formats
+
+### Worker (Haiku) - 200 tok max
+```
+## [TASK_ID]
+**Status:** DONE | PARTIAL | BLOCKED
+| File | Action | Lines |
+|------|--------|-------|
+| path | created/edited | N |
+**Handoff:** [next step]
+```
+
+### Manager (Sonnet) - 500 tok max
+```
+## Manager: [DOMAIN]
+**Status:** X/Y Complete
+| Task | File | Status | Notes |
+|------|------|--------|-------|
+| ... | ... | ... | ... |
+**Blockers:** [list or None]
+**Next:** [action needed]
+```
+
+### Director (Opus) - 1K tok max
+```
+## Director Synthesis
+**Overall:** X% Complete
+
+### By Domain
+| Domain | Status | Key Deliverables |
+|--------|--------|------------------|
+| ... | ... | ... |
+
+### Blockers
+1. [Issue and resolution needed]
+
+### Recommendations
+- [ ] Next action 1
+- [ ] Next action 2
+```
+
+---
+
+## 9. Project Configuration
+
+### Paths (customize for your project)
+```
+ROOT: /your/project/path
+├── src/           # Source code
+├── tests/         # Test files
+├── docs/          # Documentation
+└── config/        # Configuration
+```
+
+### Domains (customize)
+```
+Backend:  api, database, services, auth
+Frontend: components, pages, stores, hooks
+Tests:    unit, integration, e2e
+Infra:    docker, ci-cd, deploy
+```
+
+---
+
+## 10. Session Metrics
+
+Track per session:
+```
+| Metric | Value |
+|--------|-------|
+| Agents Spawned | [X] |
+| Tasks Completed | [Y]/[Z] |
+| Files Modified | [N] |
+| Token Efficiency | [%] |
+| Parallel Utilization | [%] |
+```
+
+---
+
+*Dynamic Agent Swarms: Labor as a scalable, on-demand microservice.*
+
+*Framework: Brash Labs DAS + Anthropic Claude Code*
